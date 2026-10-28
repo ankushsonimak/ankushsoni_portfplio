@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-cyber-bg: #050807;
+  --color-cyber-dark: #0A1210;
+  --color-cyber-surface: #0E1A17;
+  --color-neon-primary: #00FF88;
+  --color-neon-secondary: #39FF14;
+  --color-neon-dim: #00AA5A;
+  --color-neon-text: #F5F7F6;
+  --color-neon-muted: #A5B5AD;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #050807;
+    color: #F5F7F6;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #050807;
+    min-height: 100vh;
+    selection-background-color: #00FF88;
+    selection-color: #050807;
+  }
+
+  ::selection {
+    background-color: #00FF88;
+    color: #050807;
+  }
+
+  /* Custom subtle cyber scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050807;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 136, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 136, 0.5);
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 255, 136, 0.35);
+  box-shadow: 0 0 25px -5px rgba(0, 255, 136, 0.15), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-active {
+  background: rgba(0, 255, 136, 0.06);
+  border-color: rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+.glass-nav {
+  background: rgba(5, 8, 7, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.neon-glow-text {
+  text-shadow: 0 0 12px rgba(0, 255, 136, 0.45);
+}
+
+.neon-glow-box {
+  box-shadow: 0 0 20px -2px rgba(0, 255, 136, 0.25);
+}
+
+.neon-glow-sm {
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 136, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 136, 0.035) 1px, transparent 1px);
+}
+
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.2) 50%
+  );
+  background-size: 100% 4px;
+}
